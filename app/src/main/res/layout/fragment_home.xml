@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".ui.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- แบนเนอร์ -->
+    <ImageView
+        android:id="@+id/banner_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home Fragement" />
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+      />
 
-</FrameLayout>
+    <!-- หัวข้อสินค้าแนะนำ -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="สินค้าแนะนำ"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+    <!-- รายการสินค้าแนะนำ -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recommended_products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- หัวข้อโปรโมชั่น -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="โปรโมชั่นพิเศษ"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+    <!-- รายการโปรโมชั่น -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/promotions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

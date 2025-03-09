@@ -38,14 +38,21 @@ class MainActivity : AppCompatActivity() {
 
         // Handle NavigationView item clicks
         binding.navView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.nav_home -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, HomeFragment())
-                        .commit()
-                }
-
+            val selectedFragment = when (menuItem.itemId) {
+                R.id.nav_home -> HomeFragment()
+                R.id.nav_products -> productsFragment()
+                R.id.nav_cart -> cartFragment()
+                R.id.nav_profile -> profileFragment()
+                R.id.nav_favorites -> favoritesFragment()
+                else -> null
             }
+
+            selectedFragment?.let {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, it)
+                    .commit()
+            }
+
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }

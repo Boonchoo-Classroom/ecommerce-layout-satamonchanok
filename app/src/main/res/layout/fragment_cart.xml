@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.cartFragment">
+
+    <!-- หัวข้อ ตะกร้าสินค้า -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ตะกร้าสินค้า"
+        android:textSize="18sp"
+        android:padding="8dp" />
+
+    <!-- รายการสินค้าในตะกร้า -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- ราคารวม -->
+    <TextView
+        android:id="@+id/total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ราคารวม: 0 บาท"
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+    <!-- ปุ่มสั่งซื้อ -->
+    <Button
+        android:id="@+id/checkout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="สั่งซื้อสินค้า" />
+
+</LinearLayout>
